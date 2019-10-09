@@ -36,7 +36,7 @@ def query_unique_visitors(start_time='1999-12-31 23:59:59', end_time='2020-01-01
     x = sql.cursor.fetchall()
     sql.cursor.close()
 
-    unique_visitors = str(format(x[0]['unique_visitors'], ",d")) + ' visitors'
+    unique_visitors = str(format(x[0]['unique_visitors'], ",d"))
     return unique_visitors
 
 
