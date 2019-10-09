@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+  <script type="text/javascript" src="{{ url_for('static', filename='js/dwell.js') }}"></script>
+
+
+
+  <style>
+  #body_group {
+    padding: 50px;
+    border: 1px solid #993300;
+  }
+  td {
+    text-align:center;
+  }
+
+  h2 {
+    color:#002b80;
+  }
+  </style>
+
+  </head>
+
+
+  <body>
+
+  <h2>Maclytics</h2>
+
+  <label for="start">Start date:</label>
+
+  <input type="date" id="start" name="trip-start"
+         value="2018-07-22"
+         min="2000-01-01" max="2099-12-31">
+
+  <label for="end">End date:</label>
+  <input type="date" id="start" name="trip-start"
+        value="2018-07-22"
+        min="2000-01-01" max="2099-12-31">
+
+  <div id="body_group">
+    <br>
+
+      <table style="width: 100%;">
+        <tr>
+          <td style="width: 33%;">
+            Unique Visitors
+          </td>
+          <td style="width: 33%;">
+            Dwell Time
+          </td>
+          <td style="width: 34%;">
+            MAC Address Lookup
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <br>
+            <img src="{{url_for('static', filename='group.jpg')}}" width="60px" />
+          </td>
+          <td>
+            <br>
+            <img src="{{url_for('static', filename='clock.jpg')}}" width="40px" style="display:inline"/>
+          </td>
+          <td>
+            <br>
+            <input id="search" type="text" value="" size=12>
+            <br>
+            <input id="submit" type="submit" value="Submit">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <br>
+            <span id="unique_visitors"></span>
+          </td>
+          <td>
+            <br>
+            <span id="dwell_time">Dwell</span>
+          </td>
+          <td>
+            <br>
+            <div id="num_entries">-</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <hr>
+            <br>
+            <br>
+            Current Number of Devices in Area: <span id='current_device_count'>-1</span>
+          </td>
+          <td>
+            <hr>
+            <br>
+            <br>
+            Current Repeat Visitor Count: <span id='repeat_device_count'>-1</span>
+          </td>
+          <td>
+            <hr>
+            <br>
+            <br>
+            Static Device Count <span id='static_device_count'>566</span>
+          </td>
+      </table>
+
+    </div>
+
+  </body>
+</html>
