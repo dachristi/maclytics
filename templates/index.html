@@ -10,10 +10,16 @@
   <style>
   #body_group {
     padding: 50px;
-    border: 1px solid #993300;
+    text-align:center;
+    background-color:#f2f2f2;
+    /* border: 1px solid #993300; */
+  }
+  .units {
+    color:#808080;
   }
   td {
     text-align:center;
+    background-color:#ffffff;
   }
 
   h2 {
@@ -26,18 +32,6 @@
 
   <body>
 
-  <h2>Maclytics</h2>
-
-  <label for="start">Start date:</label>
-
-  <input type="date" id="start" name="trip-start"
-         value="2018-07-22"
-         min="2000-01-01" max="2099-12-31">
-
-  <label for="end">End date:</label>
-  <input type="date" id="start" name="trip-start"
-        value="2018-07-22"
-        min="2000-01-01" max="2099-12-31">
 
   <div id="body_group">
     <br>
@@ -50,9 +44,6 @@
           <td style="width: 33%;">
             Dwell Time
           </td>
-          <td style="width: 34%;">
-            MAC Address Lookup
-          </td>
         </tr>
         <tr>
           <td>
@@ -63,46 +54,29 @@
             <br>
             <img src="{{url_for('static', filename='clock.jpg')}}" width="40px" style="display:inline"/>
           </td>
+        </tr>
+        <tr>
           <td>
             <br>
-            <input id="search" type="text" value="" size=12>
+            <span id="unique_visitors"></span><span class="units">VISITORS</span>
+          </td>
+          <td>
             <br>
-            <input id="submit" type="submit" value="Submit">
+            <span id="dwell_time"></span><span class="units">MINUTES</span>
           </td>
         </tr>
         <tr>
           <td>
             <br>
-            <span id="unique_visitors"></span>
+            <br>
+            Current Visitors: <span id='current_device_count'>-1</span><span class="units">VISITORS</span>
           </td>
           <td>
             <br>
-            <span id="dwell_time">Dwell</span>
-          </td>
-          <td>
             <br>
-            <div id="num_entries">-</div>
+            Current Repeat Visitors: <span id='repeat_device_count'>-1</span><span class="units">VISITORS</span>
           </td>
         </tr>
-        <tr>
-          <td>
-            <hr>
-            <br>
-            <br>
-            Current Number of Devices in Area: <span id='current_device_count'>-1</span>
-          </td>
-          <td>
-            <hr>
-            <br>
-            <br>
-            Current Repeat Visitor Count: <span id='repeat_device_count'>-1</span>
-          </td>
-          <td>
-            <hr>
-            <br>
-            <br>
-            Static Device Count <span id='static_device_count'>566</span>
-          </td>
       </table>
 
     </div>
