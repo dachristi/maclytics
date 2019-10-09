@@ -1,0 +1,11 @@
+
+.DS_Store
+
+# data files
+data*.txt
+
+# anything in the var directory
+var
+
+# Compiled files
+*.pyc
