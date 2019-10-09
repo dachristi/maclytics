@@ -1,9 +1,10 @@
 
 .DS_Store
 
-# data & configuration files
+# data, notes, & configuration files
 data*.txt
 *.json
+*.txt
 
 # anything in the var directory
 var
