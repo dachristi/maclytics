@@ -130,3 +130,30 @@ def query_repeat_devices(period=15):
     x = sql.cursor.fetchall()[0]['repeat_device_count']
     sql.cursor.close()
     return x
+
+
+def query_daily_average_visitors():
+    '''Count the number of devices (non-randomized) detected within last 15
+    minutes'''
+
+    cmd = '''
+            SELECT AVG(unique_visitors) AS average_visitor_count
+            FROM
+              (
+              SELECT DATE(ts) day,
+              COUNT(DISTINCT mac_id) AS unique_visitors
+              FROM events
+              WHERE ts BETWEEN NOW() - INTERVAL 8 DAY AND NOW() - INTERVAL 1 DAY
+              GROUP BY day
+              ) t1
+            ;
+            '''
+    sql = SqlConnector()
+    sql.cursor.execute(cmd)
+    x = sql.cursor.fetchall()[0]['average_visitor_count']
+    if x is None:
+        value = 0
+    else:
+        value = x
+    sql.cursor.close()
+    return value
