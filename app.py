@@ -20,31 +20,31 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/dwell', methods = ['POST'])
+@app.route('/dwell', methods=['POST'])
 def dwell():
-    dwell_time = query_average_dwell(1,2)
+    dwell_time = query_average_dwell(1, 2)
     return jsonify(dwell_time=dwell_time)
 
 
-@app.route('/unique_visitors', methods = ['POST'])
+@app.route('/unique_visitors', methods=['POST'])
 def unique_visitors():
     unique_visitor_count = query_unique_visitors()
     return jsonify(unique_visitor_count=unique_visitor_count)
 
 
-@app.route('/current_devices', methods = ['POST'])
+@app.route('/current_devices', methods=['POST'])
 def current_devices():
     current_device_count = query_current_devices()
     return jsonify(current_device_count=current_device_count)
 
 
-@app.route('/repeat_devices', methods = ['POST'])
+@app.route('/repeat_devices', methods=['POST'])
 def repeat_devices():
     repeat_device_count = query_repeat_devices()
     return jsonify(repeat_device_count=repeat_device_count)
 
 
-@app.route('/search', methods = ['POST'])
+@app.route('/search', methods=['POST'])
 def search():
     if request.method == 'POST':
         mac = str(request.form['data'])
@@ -56,6 +56,7 @@ def search():
     mac_count = query_mac_search(mac)
     print(mac)
     return jsonify(mac_count=mac_count)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
