@@ -11,3 +11,7 @@ var
 
 # Compiled files
 *.pyc
+
+# Image file
+*.png
+*.jpg
