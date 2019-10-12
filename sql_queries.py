@@ -20,7 +20,7 @@ def query_average_dwell(start_time, end_time):
     x = sql.cursor.fetchall()
     sql.cursor.close()
 
-    dwell_time = str(round(float(x[0]['dwell_time']), 1)) + ' minutes'
+    dwell_time = str(round(float(x[0]['dwell_time']), 1))
     return dwell_time
 
 
