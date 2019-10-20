@@ -15,3 +15,7 @@ var
 # Image file
 *.png
 *.jpg
+
+# Residual files
+*._*
+
