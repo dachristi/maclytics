@@ -1,7 +1,7 @@
 # maclytics
 
 Software designed to capture Wi-Fi MAC addresses from unauthenticated devices in an effort to help retailers measure
-* unique Visitor Count
+* Unique Visitor Count
 * Repeat Visitor Count
 * Average Dwell Time
 
