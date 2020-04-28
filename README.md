@@ -12,5 +12,5 @@ Note that manufacturers have implemented MAC address randomization techniques to
 with consuper privacy protections, these changes reduce the effectiveness and quality of aggregate tools such as this one.
 
 The software is build on a Linux/Python/MySQL stack and has been successfully deployed on a laptop as well as Raspberry Pi 
-edge devices.
+edge devices that can transfer data to a remote server.
 
